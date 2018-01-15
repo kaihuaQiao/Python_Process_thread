@@ -105,9 +105,3 @@ if __name__ == '__main__':
     print (unqiue_sarah[0:3])
 
 
-
-    str = "dfdf";
-    print (str.find("e"))
-    print (str[0:1])
-    print (str.__len__())
-
