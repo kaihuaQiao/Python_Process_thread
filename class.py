@@ -29,7 +29,14 @@ class Athlete:
         self.times = a_times
 
     def top3(self):
-        print (self.name + "'s fastest times: " + str(sorted(set([sanitize(t) for t in self.times]))[0:3]))
+        #print (self.name + "'s fastest times: " + str(sorted(set([sanitize(t) for t in self.times]))[0:3]))
+        return  sorted(set([sanitize(t) for t in self.times]))[0:3]
+
+    def add_time(self, time): #添加一个时间
+        self.times.append(time)
+
+    def add_times(self, Times): #添加一组时间，['5.56', '3.12']
+        self.times.extend(Times)
 
     def get_coach_data(self, filename):
         try:
@@ -53,13 +60,13 @@ class Athlete:
 if __name__ == "__main__":
     james = Athlete()
     james.get_coach_data(file_james)
-    james.top3()
+    print (james.name + "'s fastest times " + str(james.top3()))
     julie = Athlete()
     julie.get_coach_data(file_julie)
-    julie.top3()
+    print (julie.name + "'s fastest times " + str(julie.top3()))
     mikey = Athlete()
     mikey.get_coach_data(file_mikey)
-    mikey.top3()
+    print (mikey.name + "'s fastest times " + str(mikey.top3()))
     sarah = Athlete()
     sarah.get_coach_data(file_sarah)
-    sarah.top3()
+    print (sarah.name + "'s fastest times " + str(sarah.top3()))
